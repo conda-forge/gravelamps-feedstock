@@ -1,5 +1,5 @@
 {% set name = "gravelamps" %}
-{% set version = "2.3.1rc14" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://git.ligo.org/mick.wright/Gravelamps/-/archive/{{ version }}/Gravelamps-{{ version }}.tar.gz
-  sha256: a46aba53cf8018be4deb0274c7caa14215c28c4cb73409ec86c5b12b568f7508
+  sha256: 48bd153a2f42d44bbd3d182b4a0b337a25529f4acd5462d2ff6e35e03fc60a11
 
 build:
   entry_points:
