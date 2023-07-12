@@ -1,5 +1,5 @@
 {% set name = "gravelamps" %}
-{% set version = "2.3.1" %}
+{% set version = "2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://git.ligo.org/mick.wright/Gravelamps/-/archive/{{ version }}/Gravelamps-{{ version }}.tar.gz
-  sha256: 48bd153a2f42d44bbd3d182b4a0b337a25529f4acd5462d2ff6e35e03fc60a11
+  sha256: d2e2850f55ddeb9666c8117c7ad43dfffd4d54644d943458bc13aa3510a9e481
 
 build:
   entry_points:
@@ -15,7 +15,7 @@ build:
     - gravelamps_generate_lens=gravelamps.generate_lens:main
     - gravelamps_generate_interpolator_data=gravelamps.lensing.generic:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
   skip: true  # [not linux or py<=39]
 
 requirements:
