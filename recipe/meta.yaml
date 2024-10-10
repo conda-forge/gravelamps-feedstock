@@ -25,6 +25,7 @@ requirements:
     - libgomp  # [linux]
   host:
     - python
+    - setuptools
     - setuptools-scm
     - pip
     - arb
