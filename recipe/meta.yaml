@@ -37,7 +37,7 @@ requirements:
     - bilby_pipe
     - python-htcondor
     - numpy
-    - scipy < 1.14.0
+    - scipy <1.14.0
 
 test:
   imports:
