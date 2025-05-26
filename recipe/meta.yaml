@@ -15,7 +15,7 @@ build:
     - gravelamps_generate_interpolator_data=gravelamps.lensing.generic:main
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  skip: true  # [windows or py<=39 or py >= 312]
+  skip: true  # [win or py<=39 or py >= 312]
 
 requirements:
   build:
