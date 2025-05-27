@@ -30,6 +30,7 @@ requirements:
     - setuptools
     - libflint
     - libboost-headers
+    - {{ compiler('cxx') }}  # [osx]
   run:
     - python
     - asimov
