@@ -1,5 +1,5 @@
 {% set name = "gravelamps" %}
-{% set version = "2.6.1" %}
+{% set version = "2.6.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://git.ligo.org/mick.wright/Gravelamps/-/archive/{{ version }}/Gravelamps-{{ version }}.tar.gz
-  sha256: 6178c3b8b4c7c330e5dea3d14ae364eb43ef7380ee91d8c0917d4470d30035bc
+  sha256: 98b708079342ed0b448b16755066566663a294170a1ed9a2b94208d1c1bf2ea7
 build:
   entry_points:
     - gravelamps_inference=gravelamps.inference:main
@@ -15,7 +15,7 @@ build:
     - gravelamps_generate_interpolator_data=gravelamps.lensing.generic:main
   script: {{ PYTHON }} -m pip install . -vv
   number: 0
-  skip: true  # [not linux or py<=39 or py >= 312]
+  skip: true  # [win or py<=39 or py >= 312]
 
 requirements:
   build:
@@ -23,12 +23,14 @@ requirements:
     - {{ compiler('cxx') }}
     - make
     - libgomp  # [linux]
+    - llvm-openmp  # [osx]
   host:
     - python
     - pip
     - setuptools
     - libflint
     - libboost-headers
+    - {{ compiler('cxx') }}  # [osx]
   run:
     - python
     - asimov
