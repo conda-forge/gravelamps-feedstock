@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://git.ligo.org/mick.wright/Gravelamps/-/archive/{{ version }}/Gravelamps-{{ version }}.tar.gz
-  sha256: 98b708079342ed0b448b16755066566663a294170a1ed9a2b94208d1c1bf2ea7
+  sha256: 89db867b73f63487823209310efe4c2d56388233f9da807b23fe84548999c855
 build:
   entry_points:
     - gravelamps_inference=gravelamps.inference:main
     - gravelamps_generate_lens=gravelamps.generate_lens:main
     - gravelamps_generate_interpolator_data=gravelamps.lensing.generic:main
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   skip: true  # [win or py<=39 or py >= 312]
 
 requirements:
@@ -24,6 +24,8 @@ requirements:
     - make
     - libgomp  # [linux]
     - llvm-openmp  # [osx]
+    - python  # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
   host:
     - python
     - pip
