@@ -39,6 +39,7 @@ requirements:
     - astropy-base <7.0
     - bilby
     - bilby_pipe
+    - htcondor
     - python-htcondor
     - numpy
     - scipy <1.14.0
