@@ -15,7 +15,7 @@ cxx_compiler:
 cxx_compiler_version:
 - '19'
 libflint:
-- '3.3'
+- '3.5'
 llvm_openmp:
 - '19'
 macos_machine:
